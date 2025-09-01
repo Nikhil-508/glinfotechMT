@@ -1,10 +1,12 @@
-// src/context/AuthContext.jsx
+// 
+
+
+
+
+
+
 import { createContext, useContext, useEffect, useState } from "react";
-import {
-  getAuth,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { app } from "../firebaseConfig";
 
 const AuthContext = createContext();
@@ -18,11 +20,14 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const storedUser = localStorage.getItem("user");
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      if (currentUser) {
-        localStorage.setItem("user", JSON.stringify(currentUser));
-      } else {
+      if (currentUser && storedUser) {
+        // Only set user if both Firebase and localStorage have user data
+        setUser(currentUser);
+      } else if (!currentUser) {
+        // No Firebase user, clear state and localStorage
+        setUser(null);
         localStorage.removeItem("user");
       }
       setLoading(false);
@@ -31,15 +36,22 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  // 🔑 Login function
-  const login = async (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  // Login function
+  const login = (userCredential) => {
+    setUser(userCredential.user);
+    localStorage.setItem("user", JSON.stringify(userCredential.user));
   };
 
-  // 🔑 Logout function
-  const logout = () => signOut(auth);
+  // Logout function
+  const logout = () => {
+    signOut(auth).then(() => {
+      setUser(null);
+      localStorage.removeItem("user");
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ user, setUser, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
       {!loading && children}
     </AuthContext.Provider>
   );

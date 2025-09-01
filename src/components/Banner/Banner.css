@@ -1,0 +1,49 @@
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #f9f6fc 0%, #e7b9ea 100%);
+  border-radius: 16px;
+  padding: 2rem 9rem;
+  margin: 5rem 5rem;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  height: 18rem;
+}
+
+.banner-text {
+  max-width: 50%;
+}
+
+.banner-text h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1d2b53;
+  margin-bottom: 1.2rem;
+}
+
+.banner-text button {
+  background: #1d2b53;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.banner-text button:hover {
+  background: #122040;
+}
+
+.banner-image img {
+  max-width: 313px;
+  height: 21rem;
+  object-fit: contain;
+  position: absolute;
+  top: -3rem;
+  right: 13rem;
+
+}

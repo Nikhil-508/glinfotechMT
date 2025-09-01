@@ -1,0 +1,208 @@
+/* Product Card — exact UI replica */
+.pc-card {
+  --pc-radius: 18px;
+  --pc-pad: 16px;
+  --pc-text: #111827;          /* near-black */
+  --pc-muted: #6b7280;         /* gray-500 */
+  --pc-border: #eef0f5;
+  --pc-primary: #22306d;       /* deep blue for CTA */
+  --pc-star: #f59e0b;          /* amber */
+  --pc-star-bg: #e5e7eb;       /* gray-200 */
+  --pc-like: #2d3a8d;
+  font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+  overflow: hidden;
+  transition: transform .12s ease, box-shadow .12s ease;
+  max-width: 100%;
+}
+
+.pc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.12);
+}
+
+/* Like (heart) button */
+.pc-like {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.12);
+  cursor: pointer;
+}
+
+.pc-like-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--pc-like);
+  stroke-width: 1.2px;
+}
+
+.pc-like.is-active .pc-like-icon {
+  fill: #ef4444;
+  stroke: #ef4444;
+}
+
+/* Media/top panel */
+.pc-media {
+  background: linear-gradient(0deg, #f8f7fb, #f8f7fb);
+  padding: 28px 20px 16px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+}
+
+.pc-media img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+/* Body */
+.pc-body {
+  padding: 16px;
+  padding-bottom: 18px;
+}
+
+.pc-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 12px;
+}
+
+.pc-title {
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--pc-text);
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* clamp to two lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pc-price {
+  font-weight: 700;
+  color: var(--pc-text);
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.pc-currency {
+  font-weight: 800;
+}
+
+.pc-variants {
+  margin: 6px 0 10px 0;
+  font-size: 14px;
+  color: var(--pc-muted);
+}
+
+/* Rating */
+.pc-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pc-star-rating {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  width: 118px; /* anchors star size; 5 * 22px + gaps */
+  height: 22px;
+}
+
+.pc-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.pc-stars svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+
+.pc-stars-bg svg {
+  fill: var(--pc-star-bg);
+}
+
+.pc-stars-fill {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.pc-stars-fill svg {
+  fill: var(--pc-star);
+}
+
+.pc-rating-count {
+  color: var(--pc-muted);
+  font-size: 14px;
+}
+
+/* Actions */
+.pc-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.pc-btn {
+  height: 44px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow .12s ease, transform .04s ease;
+}
+
+.pc-btn:active {
+  transform: translateY(1px);
+}
+
+.pc-btn-primary {
+  background: var(--pc-primary);
+  border: 1px solid var(--pc-primary);
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(34, 48, 109, 0.22);
+}
+
+.pc-btn-primary:hover {
+  box-shadow: 0 8px 18px rgba(34, 48, 109, 0.3);
+}
+
+.pc-btn-outline {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+.pc-btn-outline:hover {
+  border-color: #d1d5db;
+}
+
+/* Optional: grid wrapper for multiple cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
