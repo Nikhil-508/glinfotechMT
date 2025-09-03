@@ -58,32 +58,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      {/* Left Side Image */}
-      {/* <div className="profile-left">
-        <img src={Assets.ProfileImage} alt="profile" />
-        <div className="image-text-container">
-          <div>
-            <SiComma />
-            <SiComma />
-          </div>
-          <span>
-            Figma ipsum component variant main layer. Create flatten create effect
-            move strikethrough. Union export plugin bullet effect hand arrange
-            align. Project project boolean arrow scale. Rectangle device clip hand
-            figma content frame underline content.
-          </span>
-          <h3>Pam Hand</h3>
-          <div className="image-text-bottom-container">
-            <h3>pam.hand@gmail.com</h3>
-            <div>
-              <MdKeyboardArrowLeft />
-              <MdKeyboardArrowRight />
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Right Side Profile Details */}
+  
       <div className="profile-right">
         <div className="profile-box">
           <h2 className="profile-title">Your Profile</h2>

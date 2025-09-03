@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div className="loader"><PuffLoader /></div>;
   }
 
   if (!user) {

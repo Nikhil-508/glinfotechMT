@@ -106,7 +106,7 @@ const Products = () => {
         ))}
       </div>
 
-      {/* Pagination UI */}
+      {/* Pagination */}
       <div className="pagination">
         <button
           className="page-btn"

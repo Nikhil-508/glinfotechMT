@@ -1,11 +1,9 @@
-/* Container layout */
 .login-container {
   display: flex;
   height: 100vh;
   font-family: "Poppins", sans-serif;
 }
 
-/* Left image section */
 .login-left {
   flex: 1;
   position: relative;
@@ -17,7 +15,6 @@
   object-fit: cover;
 }
 
-/* Right form section */
 .login-right {
   flex: 1;
   display: flex;
@@ -72,7 +69,6 @@
   box-sizing: border-box;
 }
 
-/* Button */
 .btn {
   width: 100%;
   padding: 14px;
@@ -139,7 +135,6 @@
   margin-top: 5px;
 }
 
-/* Responsive Design */
 
 /* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
@@ -148,7 +143,7 @@
   }
 
   .login-left {
-    display: none; /* Hide left image section */
+    display: none; 
   }
 
   .login-right {
@@ -196,7 +191,10 @@
   }
 }
 
-/* Mobile (max-width: 480px) */
+
+/* mobile */
+
+
 @media (max-width: 480px) {
   .form-box {
     width: 100%;
