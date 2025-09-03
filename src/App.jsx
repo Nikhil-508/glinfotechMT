@@ -7,6 +7,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Products from "./pages/Products/Products";
 import ProtectedRoute from "./context/ProtectedRoute";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Products />
+            </ProtectedRoute>
+          }
+        />
+          <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           }
         />

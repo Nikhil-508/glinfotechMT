@@ -4,11 +4,12 @@
   align-items: center;
   background: linear-gradient(90deg, #f9f6fc 0%, #e7b9ea 100%);
   border-radius: 16px;
-  padding: 2rem 9rem;
-  margin: 5rem 5rem;
+  padding: 2rem 12rem; 
+  margin: 2rem;
   font-family: 'Outfit', sans-serif;
   position: relative;
-  height: 18rem;
+  height: auto; 
+  flex-wrap: wrap; 
 }
 
 .banner-text {
@@ -16,7 +17,7 @@
 }
 
 .banner-text h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #1d2b53;
   margin-bottom: 1.2rem;
@@ -26,7 +27,7 @@
   background: #1d2b53;
   color: #fff;
   padding: 0.6rem 1.4rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   border: none;
   border-radius: 8px;
@@ -39,11 +40,61 @@
 }
 
 .banner-image img {
-  max-width: 313px;
-  height: 21rem;
+  max-width: 300px;
+  height: auto;
   object-fit: contain;
-  position: absolute;
-  top: -3rem;
-  right: 13rem;
+  position: relative;
+  right: 0;
+  top: 0;
+}
 
+/* 📱 Mobile Devices */
+@media (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .banner-text {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .banner-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .banner-text button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .banner-image img {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
+/* 📲 Tablet Devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .banner-container {
+    padding: 2rem 3rem;
+    margin: 2rem;
+  }
+
+  .banner-text {
+    max-width: 55%;
+  }
+
+  .banner-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner-image img {
+    max-width: 260px;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
 }

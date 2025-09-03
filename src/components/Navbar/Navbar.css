@@ -103,3 +103,97 @@
   color: #0b1c3f;
   margin: 0;
 }
+
+
+
+
+/* Existing styles remain... */
+
+/* --- Responsive Styles --- */
+
+/* Hide hamburger by default */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile nav (hidden initially) */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 992px) {
+  .navbar-container {
+    padding: 0.6rem 2rem;
+  }
+
+  .left-content-container {
+    gap: 1rem;
+  }
+
+  .name-section h3 {
+    font-size: 0.65rem;
+  }
+
+  .name-section h2 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-content-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left-content-container ul {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    z-index: 10;
+  }
+
+  .nav-links.active li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .profile-section-container {
+    display: none; /* Hide profile text on mobile for space */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.6rem 1rem;
+  }
+
+  .cart-section-container {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .nav-links.active li {
+    font-size: 0.9rem;
+  }
+}
