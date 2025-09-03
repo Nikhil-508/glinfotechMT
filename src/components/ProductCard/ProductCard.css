@@ -2,7 +2,7 @@
 .pc-card {
   --pc-radius: 18px;
   --pc-pad: 16px;
-  --pc-text: #111827;          /* near-black */
+  --pc-text: #38445d;          /* near-black */
   --pc-muted: #6b7280;         /* gray-500 */
   --pc-border: #eef0f5;
   --pc-primary: #22306d;       /* deep blue for CTA */

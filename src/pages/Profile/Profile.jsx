@@ -6,6 +6,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { Assets } from "../../components/Assets/Assets";
 import { db } from "../../firebaseConfig";
 import { useAuth } from "../../context/AuthContext";
+import { PuffLoader } from "react-spinners";
 
 const Profile = () => {
 
@@ -52,7 +53,7 @@ const Profile = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loader"><PuffLoader /></div>;
   }
 
   return (
